@@ -1,0 +1,36 @@
+ footer{
+    margin-top:0px;
+    border-top: 1px solid rgb(34, 32, 32);
+}
+
+.textFooter {
+    color: rgb(245, 242, 242);
+    text-decoration: none;
+}
+
+.textFooter:hover{
+    color:blueviolet;
+}
+
+.container .row{
+    font-size: .8em;
+}
+
+#root > div > div:nth-child(4) > footer > div > nav > ul:nth-child(4) > li.d-flex{
+   gap:.6em;
+}
+
+
+@media (max-width:480px){
+    footer ul li{
+        font-size: .8em;
+    }
+    i{
+        font-size: .8em;
+    }
+
+    .column{
+        padding-left: 30px;
+    }
+ 
+}  

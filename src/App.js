@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import Navbar from './components/Navbar/Navbar'
+import ItemDetailContainer from './containers/ItemDetailContainer'
+import ItemListContainer from './components/ItemListcontainer/ItemListContainer'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Footer from './components/Footer/Footer'
+import Cart from './components/Cart/Cart'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>ENVÍO GRATIS A PARTIR DE $14.990 Y 3 o 6 PAGOS SIN INTERÉS</p>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<ItemListContainer greeting={'Bienvenido a su shop online'} />} />
+          <Route path="/category/:categoryId" element={<ItemListContainer greeting={'Bienvenido a su shop online'} />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/item/:itemId" element={<ItemDetailContainer />} /> 
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
