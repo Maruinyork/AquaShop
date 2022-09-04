@@ -15,6 +15,9 @@
     width: 100%;
 }
 
+.itemContainer .spinner{
+    margin-top: 130px;
+}
 .item-list{
     text-align: center;
     font-family: 'Poppins';

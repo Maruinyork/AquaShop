@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import ItemDetail from '../components/ItemDetail/ItemDetail';
 import {useParams} from 'react-router-dom';
+import { CircularProgress } from '@mui/material'
+import '../containers/ItemDetailContainer.css';
 
 const items =  [
 {
@@ -163,12 +165,14 @@ const items =  [
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({});
+  const [loading, setLoading] = useState(false)
   const {itemId} = useParams();
 
   useEffect(()=>{ //Se hara una petición al montarse
     const getProduct = new Promise(res => {
         setTimeout(() => {
-            res(items);
+          setLoading(true)
+          res(items);
         }, 2000); 
     });
 
@@ -176,7 +180,10 @@ const ItemDetailContainer = () => {
   }, [itemId])
 
   return (
-   <ItemDetail product={product} />
+    <div>
+    {!loading ? <div className='spinner'><CircularProgress /></div> :<ItemDetail product={product} />}
+    </div>
+   
   );
 }
 

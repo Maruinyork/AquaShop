@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import ItemList from '../ItemList/ItemList'
 import './ItemListContainer.css'
+import { CircularProgress } from '@mui/material'
 import { useParams } from 'react-router-dom' //usa los parametros de la URL
 
 const items = [
@@ -117,18 +118,20 @@ const items = [
 
 const ItemListContainer = ({ greeting }) => {
   const [product, setProduct] = useState([])
+  const [loading, setLoading] = useState(false)
   const { categoryId } = useParams()
 
   useEffect(() => {
     const getProduct = new Promise((res) => {
       setTimeout(() => {
+        setLoading(true)
         res(items)
       }, 2000) 
     })
     if (categoryId) {
       getProduct.then((res) =>
         setProduct(res.filter((item) => item.category === categoryId)),
-      )
+        )
     } else {
       getProduct.then((res) => setProduct(res)) //Si no hay solicitud de categoria se muestra todo
     }
@@ -159,7 +162,7 @@ const ItemListContainer = ({ greeting }) => {
       </div>
 
       <div className="itemContainer">
-        <ItemList product={product} />
+        {!loading ? <div className='spinner'><CircularProgress /></div> : <ItemList product={product} />}
       </div>
     </div>
   )
