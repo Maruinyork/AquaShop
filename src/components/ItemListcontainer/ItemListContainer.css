@@ -74,18 +74,6 @@
     border: 2px solid rgb(206, 201, 201);
 }
 
-.counter{
-    width: 100%;
-    background-color: rgb(7, 7, 7);
-    color: white;
-    font-size: .7em;
-    text-shadow: 1px 1px 2px black, 0 0 1em rgb(32, 32, 104), 0 0 0.2em rgb(30, 30, 58);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 @media (max-width:480px){
     .onlineorder{
         top:25vh;

@@ -64,7 +64,7 @@ const Footer = () => {
               <p className="text-center">
                 <i className="bi bi-c-circle">
                   {' '}
-                  2022 Maruinyork | All right reserved
+                  2022 | Developed by Maruinyork 
                 </i>
               </p>
             </div>

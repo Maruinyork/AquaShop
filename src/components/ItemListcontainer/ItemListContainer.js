@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import ItemCount from '../ItemCount/ItemCount'
 import ItemList from '../ItemList/ItemList'
 import './ItemListContainer.css'
 import { CircularProgress } from '@mui/material'
@@ -137,9 +136,6 @@ const ItemListContainer = ({ greeting }) => {
     }
   }, [categoryId]) //cada vez que cambia la categoria debe montarse el useEffect
 
-  // const onAdd = (quantity)=>{
-  //   console.log(`Compraste ${quantity} unidades`);
-  // }
 
   return (
     <div className="body">
@@ -157,10 +153,7 @@ const ItemListContainer = ({ greeting }) => {
           </span>
         </div>
       </div>
-      <div className="counter">
-        {/* <ItemCount stock={5} initial={1} onAdd={onAdd}/> Le paso por props el stock y la cantidad inicial */}
-      </div>
-
+      
       <div className="itemContainer">
         {!loading ? <div className='spinner'><CircularProgress /></div> : <ItemList product={product} />}
       </div>
