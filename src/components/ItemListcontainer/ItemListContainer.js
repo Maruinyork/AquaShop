@@ -61,7 +61,7 @@ const items = [
   },
   {
     id: 7,
-    name: 'Gafas Natación Marfed antiempañe ',
+    name: 'Antiparras Speedo Sea Squad Skoogle Junior',
     category: 'natacion',
     stock: 10,
     initial: 6,
@@ -79,7 +79,7 @@ const items = [
   },
   {
     id: 9,
-    name: 'Antiparras Speedo Sea Squad Skoogle Junior Pink',
+    name: 'Gafas Natación Swans antiempañe anti fog ajustable',
     category: 'natacion',
     stock: 5,
     initial: 6,

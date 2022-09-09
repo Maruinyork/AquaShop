@@ -70,6 +70,7 @@ label {
     0 0 0.2em rgb(126, 26, 26);
 }
 
+
 @media (max-width: 768px) {
   .add {
     width: 30%;
