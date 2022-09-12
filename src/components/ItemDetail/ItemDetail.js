@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom'
+import {useCartContext} from '../../context/CartContext';
+import { Link } from 'react-router-dom';
 import '../ItemDetail/ItemDetail.css';
 import ItemCount from '../ItemCount/ItemCount';
 
@@ -9,10 +10,13 @@ const ItemDetail = ({ product }) => {
   
   const[toCart, setToCart] = useState(false);
   const[mainImage, setMainImage] = useState(image);
+  
+  const {addItem} = useCartContext(); //del cartContext solo quiero el addProduct
  
 
   const onAdd = (quantity)=>{
       setToCart(true);
+      addItem(product, quantity);
   }
 
   const fixImage =(img)=>{
