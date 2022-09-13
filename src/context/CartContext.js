@@ -1,27 +1,27 @@
 import React, {useState, useContext} from 'react'
 const CartContext = React.createContext([]);
 
-export const useCartContext = ()=> useContext(CartContext)
+export const useCartContext = ()=> useContext(CartContext) //directamente creo una funcion para no tener que importar todo el tiempo el useContext
 
 const CartProvider = ({children}) => {
   const[cart, setCart] = useState([]); //almacenar productos
   
   const addItem = (item, quantity)=>{
-    if(isInCart(item.id)){
+    if(isInCart(item.id)){ //si esta en el carrito, con un map creamos un nuevo array. Todos los item que no sean iguales que se queden igual, y los que sean iguales que queden iguales pero que se le sume 1. 
         setCart(cart.map(product => {
             return product.id === item.id ? {...product, quantity: product.quantity + quantity } : product
         }));
     } else{
-        setCart([...cart, {...item, quantity}]);
+        setCart([...cart, {...item, quantity}]); //si no esta en el carrito creo un nuevo objeto con los datos que ya tenia del item mas la cantidad nueva
     }
   }
 
   console.log('carrito:', cart)
 
-  const clear = ()=> setCart([]);//eliminar productos
+  const clear = ()=> setCart([]);//eliminar productos, lo seteo como un array vacio.
   
   const isInCart = (id)=> cart.find(product => product.id === id) ? true : false;
-  const removeItem = (id)=> setCart(cart.filter(product=>product.id !==id));
+  const removeItem = (id)=> setCart(cart.filter(product=>product.id !==id)); //dejo pasar todos los productos que no tengan el id indicado (con ellos armo un array) y seteo asi el carrito.
 
     return (
     <CartContext.Provider value={{ 
