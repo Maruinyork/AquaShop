@@ -125,12 +125,20 @@
       text-align: justify;
       margin: 8px;
     }
+
+    .box h5, h2{
+      margin-left: 3%;
+    }
     .thumb{
       height: 50px;
       margin: 8px;
     }
     .thumb img{
       width: 50px;
+    }
+    #root > div > div:nth-child(3) > div > div > div.box > div.counter > a{
+      text-align: center;
+      font-weight: bold;
     }
   }
 

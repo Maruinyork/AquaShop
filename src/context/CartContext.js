@@ -18,6 +18,14 @@ const CartProvider = ({children}) => {
 
   console.log('carrito:', cart)
 
+  const totalPrice = ()=>{
+     return cart.reduce((prev, act) => prev + act.quantity * act.price, 0); //el valor inicial de prev es 0
+  } //reduce recorre todo el array, por cada elemento ejecutara la funcion y el resultado se acumulara en prev.
+
+  const totalItems = ()=>{
+    return cart.reduce((acumulador, productoActual) => acumulador + productoActual.quantity, 0); //valor inicial de acumulador es 0
+  }
+
   const clear = ()=> setCart([]);//eliminar productos, lo seteo como un array vacio.
   
   const isInCart = (id)=> cart.find(product => product.id === id) ? true : false;
@@ -28,7 +36,10 @@ const CartProvider = ({children}) => {
         clear,
         isInCart,
         removeItem,
-        addItem 
+        addItem,
+        totalPrice,
+        totalItems,
+        cart
     }}>
       {children}
     </CartContext.Provider>

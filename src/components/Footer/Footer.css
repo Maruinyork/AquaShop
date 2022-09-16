@@ -3,10 +3,6 @@ footer {
   border-top: 1px solid rgb(34, 32, 32);
 }
 
-.install img {
-  margin-top: 0.8em;
-}
-
 .install h5 {
   margin-top: 1.6em;
   font-size: 1.2em;
@@ -44,7 +40,8 @@ footer {
 }
 
 .install img{
-  border: 2px double  rgb(108, 14, 85);
+  margin-top: 0.8em;
+  border: 2px double  rgb(90, 12, 70);
 }
 
 @media (max-width: 480px) {

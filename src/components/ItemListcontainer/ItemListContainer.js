@@ -20,7 +20,7 @@ const items = [
     category: 'buceo',
     stock: 7,
     initial: 6,
-    price: 250,
+    price: 2500,
     image: require('../../assets/img2.png'),
   },
   {
@@ -38,7 +38,7 @@ const items = [
     category: 'natacion',
     stock: 6,
     initial: 6,
-    price: 250,
+    price: 2450,
     image: require('../../assets/img4.png'),
   },
   {
@@ -65,7 +65,7 @@ const items = [
     category: 'natacion',
     stock: 10,
     initial: 6,
-    price: 250,
+    price: 950,
     image: require('../../assets/img7.png'),
   },
   {
@@ -74,16 +74,16 @@ const items = [
     category: 'natacion',
     stock: 5,
     initial: 6,
-    price: 250,
+    price: 12200,
     image: require('../../assets/img8.png'),
   },
   {
     id: 9,
-    name: 'Gafas Natación Swans antiempañe anti fog ajustable',
+    name: 'Gafas de Natación Swans antiempañe diseño hidrodinámico ajustable anti fog',
     category: 'natacion',
     stock: 5,
     initial: 6,
-    price: 250,
+    price: 1200,
     image: require('../../assets/img9.png'),
   },
   {
@@ -92,7 +92,7 @@ const items = [
     category: 'natacion',
     stock: 4,
     initial: 6,
-    price: 250,
+    price: 8500,
     image: require('../../assets/img10.png'),
   },
   {
@@ -110,7 +110,7 @@ const items = [
     category: 'buceo',
     stock: 5,
     initial: 6,
-    price: 250,
+    price: 7600,
     image: require('../../assets/img12.png'),
   },
 ]
